@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="style/mdb.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.css" />
+    <link rel="stylesheet" href="style/radar-chart.css" />
+    <link rel="stylesheet" href="style/Comparison.css" />
+</head>
+
+<body>
+    <div class="container-for-admin">
+        <!--Main Navigation-->
+        <header>
+
+            <!-- Navbar -->
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light white top-nav-collapse">
+                <div class="container-fluid">
+
+                    <!-- Brand -->
+                    <a class="navbar-brand waves-effect" href="Index.html">
+                        <strong class="blue-text">&lt; AG</strong>
+                    </a>
+
+                    <!-- Collapse -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Links -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <!-- Left -->
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link waves-effect" href="Index.html#aboutus">About us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link waves-effect" href="Index.html#Guid">Tutorials</a>
+                            </li>
+                        </ul>
+
+                        <!-- Right -->
+                        <ul class="navbar-nav nav-flex-icons">
+                            <li class="nav-item">
+                                <a href="https://github.com/hodaghanbarzadeh/LAVA_ApplyGermany"
+                                    class="nav-link border border-light rounded waves-effect" target="_blank">
+                                    <i class="fab fa-github mr-2"></i>AG GitHub
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </nav>
+            <!-- Navbar -->
+
+
+
+        </header>
+        <!--Main Navigation-->
+
+        <!--Main layout-->
+        <main class="pt-3 mx-lg-5">
+            <div class="container-fluid mt-5">
+
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+
+                    <!--Grid column-->
+                    <div class="col-md-12 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+
+                            <!-- Card header -->
+                            <div class="card-header d-sm-flex justify-content-between">
+                                <div>Universities</div> 
+                                <div>
+                                    <button id="toggleModal" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalapply">Confirm & Apply</button> 
+                                </div>
+                            </div>
+
+                            <!--Card content-->
+                            <div class="card-body">
+
+                                <!-- Table  -->
+                                <table id="tbluni" class="table table-hover">
+                                    <!-- Table head -->
+                                    <thead class="blue-grey lighten-4">
+                                        <tr>
+                                            <th>#</th>
+                                            <th><input type="checkbox" checked="checked" class="form-check-input"
+                                                    id="slctAll"><label class="form-check-label" for="slctAll"></label>
+                                            </th>
+                                            <th>Name</th>
+                                            <th>City</th>
+                                            <th>Control Type</th>
+                                            <th>Study Abroad</th>
+                                            <th>Rank</th>
+                                        </tr>
+                                    </thead>
+                                    <!-- Table head -->
+
+                                    <!-- Table body -->
+                                    <tbody>
+
+                                    </tbody>
+                                    <!-- Table body -->
+                                </table>
+                                <!-- Table  -->
+
+                            </div>
+
+                        </div>
+                        <!--/.Card-->
+
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+
+
+                    <!--Grid column-->
+                    <div class="col-md-6 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+                            <!-- Card header -->
+                            <div class="card-header text-center">
+                                Students' Area Of Study
+                            </div>
+                            <!--Card content-->
+                            <div class="card-body">
+                                <div id="radarchart1">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--/.Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+                            <!-- Card header -->
+                            <div class="card-header text-center">
+                                Total Number of Student
+                            </div>
+                            <!--Card content-->
+                            <div class="card-body">
+                                <div id="barchart1"></div>
+                            </div>
+
+                        </div>
+                        <!--/.Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+
+
+                    <!--Grid column-->
+                    <div class="col-md-12 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+                            <!-- Card header -->
+                            <div class="card-header text-center">
+                                Students' Assessments of Universities
+                            </div>
+                            <!--Card content-->
+                            <div class="card-body">
+                                <div id="linechart1"></div>
+                            </div>
+
+                        </div>
+                        <!--/.Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+                <section>
+
+                    <!--Modal: Login / Register Form Demo-->
+                    <div class="modal fade" id="modalapply" tabindex="-1" role="dialog"
+                        aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Apply by us</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                                                    <!-- Form -->
+                                <form name="" action="select-uni.html" method="GET">
+                                    <div class="md-form">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <input type="text" id="form3" class="form-control">
+                                        <label for="form3">Your name</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <i class="fas fa-envelope prefix grey-text"></i>
+                                        <input type="text" id="form2" class="form-control">
+                                        <label for="form2">Your email</label>
+                                    </div>
+                                    <div class="select-wrapper mdb-select md-form">
+                                        <i class="fas fa-pencil-alt prefix grey-text"></i>
+                                        <select name="casestudy" id="casestudy" class="mdb-select md-form" data-stop-refresh="true">
+                                            <option value="" disabled=""  selected="">Choose your Field of Study
+                                            </option>
+                                            <option value="1">History</option>
+                                            <option value="2">Linguistics and languages</option>
+                                            <option value="3">Philosophy</option>
+                                            <option value="4">Religion</option>
+                                            <option value="5">The arts</option>
+                                            <option value="6">Literature</option>
+                                            <option value="7">Performing arts</option>
+                                            <option value="8">Economics</option>
+                                            <option value="9">Geography</option>
+                                            <option value="10">Political science</option>
+                                            <option value="11">Psychology</option>
+                                            <option value="12">Biology</option>
+                                            <option value="13">Chemistry</option>
+                                            <option value="14">Physics</option>
+                                            <option value="15">Computer sciences</option>
+                                            <option value="16">Architecture and design</option>
+                                            <option value="17">Law</option>
+                                            <option value="18">Medicine</option>
+                                        </select>
+                                        <label for="form8">Field of Study</label>
+                                    </div>
+
+                                    <div class="select-wrapper mdb-select md-form">
+                                        <i class="fas fa-pencil-alt prefix grey-text"></i>
+                                        <select name="degree" id="degree" class="mdb-select md-form" data-stop-refresh="true">
+                                            <option value="" disabled=""  selected="">Choose your Degree
+                                            </option>
+                                            <option value="1">Bachlor</option>
+                                            <option value="2">Master</option>
+                                            <option value="3">PhD</option>
+                                        </select>
+                                        <label for="form8">Degree</label>
+                                    </div>
+
+                                </form>
+                                <!-- Form -->
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary"  data-dismiss="modal" data-toggle="modal" data-target="#frameModalConfirm" >Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Modal: Login / Register Form Demo-->
+                    
+<!-- Frame Modal Bottom -->
+<div class="modal fade top" id="frameModalConfirm" tabindex="-1" role="dialog" aria-labelledby="myConfirm"
+aria-hidden="true">
+
+<!-- Add class .modal-frame and then add class .modal-bottom (or other classes from list above) to set a position to the modal -->
+<div class="modal-dialog modal-frame modal-top" role="document">
+
+
+  <div class="modal-content">
+    <div class="modal-body">
+      <div class="row d-flex justify-content-center align-items-center">
+
+        <p class="pt-3 pr-2">Thanks for choosing us, We have received your Application. We will be in touch with you as soon as possible. 
+        </p>
+
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Frame Modal Bottom -->
+                </section>
+
+            </div>
+        </main>
+        <!--Main layout-->
+
+        <!--Footer-->
+        <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
+
+
+            <!--Copyright-->
+            <div class="footer-copyright py-3">
+                © 2020 Copyright:
+                <a href="http://Due-Uni.de" target="_blank"> AG - LAVA - Due-Uni.de </a>
+            </div>
+            <!--/.Copyright-->
+
+        </footer>
+        <!--/.Footer-->
+    </div>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.js"></script>
+    <!-- MDB core JavaScript -->
+
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&sensor=false&key=AIzaSyAtjDhf8U-jwr0D_do8nJ8ZsQhFt1Xq-f4" defer></script> -->
+    <script type='text/javascript'
+        src='https://www.bing.com/api/maps/mapcontrol?key=As2u6Xlj4NfKZ2TggP-d86HJtXC0iyfl7mod06f4K6w1b1r8LXiIUoEGIwtQhV9A&callback=loadMapScenario'
+        async defer></script>
+    <script type="text/javascript" src="//d3js.org/d3.v3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.js"></script>
+    <script type="text/javascript" src="js/mdb.js"></script>
+    <script type="text/javascript" src="js/selectMaterial.js"></script>
+
+    <script src="js/radar-chart.js"></script>
+    <script src="js/uinpoint.js"></script>
+    <script src="js/notuse.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/Comparison.js"></script>
+</body>
+
+</html>

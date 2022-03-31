@@ -1,0 +1,26 @@
+{
+    "mapOptions": {
+      "center": "51.19254942903923, 10.399044671663109",
+      "zoom": 6,
+      "minZoom": 2,
+      "maxBounds":""
+    },
+    "modules": [
+      {
+        "moduleName": "Microsoft.Maps.Isochrone"
+      },
+      
+      {
+        "moduleName": "Microsoft.Maps.GeoXml",
+        "moduleOptions": [
+          {
+            "addLayerFromUrl": "style/Countries.xml",
+            "geoXmlOption": {
+              "layerName": "foo",
+              "_comment": "other options are autoUpdateMapView, infoboxOptions, suppressInfoboxes, visible"
+            }
+          }
+        ]
+      }
+    ]
+  }

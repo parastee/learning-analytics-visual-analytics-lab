@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.css" />
+  <!-- Material Design Bootstrap -->
+  <link href="style/mdb.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style/select-Uni.css" />
+</head>
+
+<body>
+  <div class="container-for-admin">
+    <!--Main Navigation-->
+    <header>
+
+      <!-- Navbar -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light white top-nav-collapse">
+        <div class="container-fluid">
+
+          <!-- Brand -->
+          <a class="navbar-brand waves-effect" href="Index.html">
+            <strong class="blue-text">&lt; AG</strong>
+          </a>
+
+          <!-- Collapse -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Links -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link waves-effect" href="Index.html#aboutus">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect" href="Index.html#Guid">Tutorials</a>
+              </li>
+            </ul>
+
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+              <li class="nav-item">
+                <a href="https://github.com/hodaghanbarzadeh/LAVA_ApplyGermany"
+                  class="nav-link border border-light rounded waves-effect" target="_blank">
+                  <i class="fab fa-github mr-2"></i>AG GitHub
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+      </nav>
+      <!-- Navbar -->
+
+      <!-- Sidebar -->
+      <div class="sidebar-fixed position-fixed">
+
+        <a class="logo-wrapper waves-effect">
+          <img src="style/Logo.png" class="img-fluid" alt="" width="250" height="200">
+        </a>
+
+        <div class="list-group list-group-flush">
+          <div class="md-form">
+            <!-- Default input -->
+            <input id="CityName" type="text" aria-label="Search" class="form-control mdb-autocomplete">
+            <button class="mdb-autocomplete-clear">
+              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="https://www.w3.org/2000/svg">
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+              </svg>
+            </button>
+            <label for="CityName" class="active">What is your favorite City?</label>
+            <!-- <button class="btn btn-primary btn-sm my-0 p" type="submit">
+                    <i class="fa fa-search"></i>
+                  </button> -->
+          </div>
+          <label for="">Comparison List</label>
+          <!-- List group links -->
+          <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action waves-effect">
+              <span id="cmplst0"></span>
+              <span class="badge badge-danger badge-pill pull-right" onclick="removeToComparisonlist(0)">
+                <i class="fa fa-window-close"></i>
+              </span>
+            </a>
+            <a class="list-group-item list-group-item-action waves-effect">
+              <span id="cmplst1"></span>
+              <span class="badge badge-danger badge-pill pull-right" onclick="removeToComparisonlist(1)">
+                <i class="fa fa-window-close"></i>
+              </span>
+            </a>
+            <a class="list-group-item list-group-item-action waves-effect">
+              <span id="cmplst2"></span>
+              <span class="badge badge-danger badge-pill pull-right" onclick="removeToComparisonlist(2)">
+                <i class="fa fa-window-close"></i>
+              </span>
+            </a>
+            <a class="list-group-item list-group-item-action waves-effect">
+              <span id="cmplst3"></span>
+              <span class="badge badge-danger badge-pill pull-right" onclick="removeToComparisonlist(3)">
+                <i class="fa fa-window-close"></i>
+              </span>
+            </a>
+            <a class="list-group-item list-group-item-action waves-effect">
+              <span id="cmplst4"></span>
+              <span class="badge badge-danger badge-pill pull-right" onclick="removeToComparisonlist(4)">
+                <i class="fa fa-window-close"></i>
+              </span>
+            </a>
+          </div>
+          <!-- List group links -->
+          <button id="btnCompare" type="button" class="btn btn-primary btn-sm">Compare</button>
+
+        </div>
+      </div>
+
+  </div>
+  <!-- Sidebar -->
+
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="pt-3 mx-lg-5">
+    <div class="container-fluid mt-5">
+      <section>
+        <!-- Full Height Modal Right Success Demo-->
+        <div class="modal fade right" id="UniInfoModal" tabindex="-1" role="dialog"
+          aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+          <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+            <!--Content-->
+            <div class="modal-content">
+              <!--Header-->
+              <div class="modal-header">
+                <p class="heading lead">Modal Success</p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+              </div>
+
+              <!--Body-->
+              <div class="modal-body">
+                <div class="text-center">
+                  <div id="dounatChart1"></div>
+                  <p id="UniAddress">Address</p>
+                </div>
+                <ul class="list-group z-depth-0">
+                  <li id="tel"class="list-group-item justify-content-between">
+                    Telephone
+                    <span class="badge badge-primary badge-pill">14</span>
+                  </li>
+                  <li id="founded" class="list-group-item justify-content-between">
+                    <span>Founded</span>
+                    <span class="badge badge-primary badge-pill">2</span>
+                  </li>
+                  <li id="TotalStd" class="list-group-item justify-content-between">
+                    Total of Student
+                    <span class="badge badge-primary badge-pill">1</span>
+                  </li>
+                  <li id="TuitionIntStdnB" class="list-group-item justify-content-between">
+                    Tuition Fees
+                    <span class="badge badge-primary badge-pill">14</span>
+                  </li>
+                  <li id="CampusSetting" class="list-group-item justify-content-between">
+                    Campus Setting
+                    <span class="badge badge-primary badge-pill">2</span>
+                  </li>
+                  <li id="ControlType" class="list-group-item justify-content-between">
+                    Control Type
+                    <span class="badge badge-primary badge-pill">1</span>
+                  </li>
+                  <li id="SelectionType" class="list-group-item justify-content-between">
+                    Selection Type
+                    <span class="badge badge-primary badge-pill">1</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!--Footer-->
+              <div class="modal-footer justify-content-center">
+                <a role="button" id="btnaddcomparison" class="btn btn-info">Add to Comparison List
+                  <i class="fa fa-diamond ml-1"></i>
+                </a>
+                <a role="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">No,
+                  thanks</a>
+              </div>
+            </div>
+            <!--/.Content-->
+          </div>
+        </div>
+        <!-- Full Height Modal Right Success Demo-->
+      </section>
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-10 mb-4">
+
+          <!--Card-->
+          <div class="card">
+
+            <!-- Card header -->
+            <div class="card-header d-sm-flex justify-content-between">
+              <div>Universities On Map</div>
+              <div>
+                <button id="cityonMapSelect" type="button" class="btn btn-primary btn-sm">Select :
+                  <span></span></button>
+              </div>
+            </div>
+            <!--Card content-->
+            <div class="card-body">
+
+              <!--Google map-->
+              <div id="map-container" class="map-container" style="height: 500px">
+                <!-- <iframe src="https://www.google.com/maps/embed/v1/place?q=Essen&key=AIzaSyB3DXYAQNSzN6rOrz6giPYssoYcqGa6xlg"
+                    frameborder="0" style="border:0" allowfullscreen></iframe> -->
+              </div>
+
+            </div>
+
+          </div>
+          <!--/.Card-->
+
+
+        </div>
+        <!--Grid column-->
+
+
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
+
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2020 Copyright:
+      <a href="http://Due-Uni.de" target="_blank"> AG - LAVA - Due-Uni.de </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+  </div>
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.js"></script>
+    <script type="text/javascript" src="//d3js.org/d3.v3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.js"></script><!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&sensor=false&key=AIzaSyAtjDhf8U-jwr0D_do8nJ8ZsQhFt1Xq-f4" defer></script> -->
+  <script type='text/javascript'
+    src='https://www.bing.com/api/maps/mapcontrol?key=As2u6Xlj4NfKZ2TggP-d86HJtXC0iyfl7mod06f4K6w1b1r8LXiIUoEGIwtQhV9A&callback=loadMapScenario'
+    async defer></script>
+  <script src="js/uinpoint.js"></script>
+  <script src="js/notuse.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/Select-uni.js"></script>
+</body>
+
+</html>
